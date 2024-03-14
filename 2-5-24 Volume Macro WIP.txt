@@ -1,0 +1,58 @@
+//Choose where you want the folder to be taken from
+input = getDirectory("What Folder Are Images Stored in?");
+
+
+//Choose where you want the results to be saved
+output = getDirectory("Where would you like the results saved to?");
+
+
+//Get list of files in the folder and set it so that
+//each image is opened during analysis
+list = getFileList(input);
+
+lengthmin = list.length - 1;
+ultcount = 0
+
+//Figuring Out if List is Odd or Even and "Telling"
+//Program how many times to repeat code
+
+rep = 0;
+for (i = list.length; i > 1; i = i/2) {
+rep = rep + 1;
+}
+
+if (list.length % 2 == 0){
+	rep = rep;
+	odd = 0;
+	} else{
+		rep = rep + 1;
+		odd = 1;
+	}
+
+
+//Setting up the arrays that will be ued to name files later
+alp = newArray("a","b","c","d","e","f","g","h","i",
+				"j","k","l","m","n","o","p","q","r",
+				"s","t","u","v","w","x","y","z");
+
+
+//For loop that opens all of the images
+for (i = 0; i < list.length; i++) {
+	open(input + list[i]);
+	saveAs("Tiff", output + alp[count]  + ".tif");
+}
+
+
+
+
+for (i = 0; i < list.length; i++) {
+	selectImage(list[i] + ".tif");
+	getCursorLoc(x, y, z, flags);
+}
+
+
+
+run("Close All");
+
+
+close("*");
