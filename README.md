@@ -15,10 +15,19 @@ This macro script is designed for use with ImageJ Version 1.54i.
 This macro is designed to produce volume measurements that can be compared to each other rather than ones that can be prepared between different analyses. To put it more directly, *the volume measurements are likely innacurate to the actual volume of the worm*. All comparisons that I conducted throughout the development of this macro were between measurements made within the same macro run period.
 
 ## Macro Use
-To use this macro simply download the .ijm (ImageJ Macro) file, open it using Fiji in ImageJ, and select the "Run" button.
+To use this macro simply download the .ijm (ImageJ Macro) file, open it using Fiji in ImageJ, and select the "Run" button. It is expected that you have images of full worms to analyze in addition to a picture of a scale bar to ensure that the later measurements are accurate.
 
-### Selecting Images to Analyze
+![Run Button Demo](https://github.com/zlbaker/ImageJ-Worm-Volume-Measurement/assets/156845020/d7f25b1b-dfd7-4a73-8fc7-b50c3ad2c9ec)
 
+
+### Selecting Images to Analyze, an Output Folder, and an Appropriate Scale Bar
+After starting the program, you will first be prompted by a popup window to select a folder containing the images that you are interested in analyzing. Use the menu to select such a folder. This folder should NOT include the image of the scale bar.
+
+After selecting this folder, you will be prompted to select a folder to store the output CSV file in. Select any folder.
+
+You will then be prompted to select the image that contains the appropriate scale bar, after selecting "OK" on a popup prompt. It is incredibly important that this image is take at the same magnification as the worm images that will be analyzed.
+
+###
 
 ## References
 Schneider, C. A., Rasband, W. S., & Eliceiri, K. W. (2012). NIH Image to ImageJ: 25 years of image analysis. *Nature Methods*, 9(7), 671–675.
