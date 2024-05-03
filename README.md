@@ -7,7 +7,7 @@ This macro was produced as a Kenyon College COMP401 undergraduate project in the
 Any questions can be directed to zachlenbaker@gmail.com
 
 ## Macro Warnings
-*This macro, while fairly successful in being able to measure relative volumes, is quite unrefined due to time constraints in completing this project.*
+**This macro, while fairly successful in being able to measure relative volumes, is quite unrefined due to time constraints in completing this project.**
 *As such, please take all results with a grain of salt. It is quite possible that there are bugs scattered throughout this code. With this, I suggest viewing this macro as a tool to build on for your own uses rather than one that can be downloaded and used immediately.*
 
 This macro script is designed for use with ImageJ Version 1.54i.
