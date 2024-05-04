@@ -16,7 +16,7 @@ This macro script is designed for use with ImageJ Version 1.54i.
 
 This macro is designed to produce volume measurements that can be compared to each other rather than ones that can be prepared between different analyses. To put it more directly, *the volume measurements are likely innacurate to the actual volume of the worm*. All comparisons that I conducted throughout the development of this macro were between measurements made within the same macro run period.
 
-## Macro Use
+## General Macro Use
 To use this macro simply download the .ijm (ImageJ Macro) file, open it using Fiji in ImageJ, and select the "Run" button. It is expected that you have images of full worms to analyze in addition to a picture of a scale bar to ensure that the later measurements are accurate.
 
 ![Run Button Demo](https://github.com/zlbaker/ImageJ-Worm-Volume-Measurement/assets/156845020/d7f25b1b-dfd7-4a73-8fc7-b50c3ad2c9ec)
@@ -34,12 +34,25 @@ The scale bar image that you selected earlier will now open and you will be prom
 
 The image will then be converted to 8-bit and its resolution will be decreased according to the number that you just entered. Both of these steps are necessary for anaylsis with the ridge detection module, which was designed to analyze much smaller features than our worms. A pop-up window will ask if the scaling is satisfactory, continuing the program if you enter "y" and allowing you the change the DPI adjustment if you enter "n". While it may be difficult to tell if the image is scaled appropriately at this stage, you will be able to adjust this scaling later if the resolution of the worm images is reduced too much or not enough (the worms should ultimated be around 30 pixels wide).
 
-The line tool will then be automatically selected and you will be prompted to set the scale using the scale bar image. *Make sure that the "global" box is checked*, then hit the "OK" button on the popup prompt.
+The line tool will then be automatically selected and you will be prompted to set the scale using the scale bar image. *Make sure that the "global" box is checked*, then hit the "OK" button on the popup prompt. These steps are represented by the numbers on the image below.
 
 ![Scale Demo](https://github.com/zlbaker/ImageJ-Worm-Volume-Measurement/assets/156845020/7f5fd87a-5cb2-4a6e-b33b-1d901b78bae4)
 
 ### Modifying Worm Images, Gathering 2D Information, and Estimating Volume
 All of the images contained within the input folder will now open. The first one opened will be automatically selected and modified, after which the user will be asked if the resulting modifications look correct. It is at this point that you may notice that the worm is too large for the detection software or that it is much smaller than 30 pixels in width. Inputting "y" will continue the program and inputting "n" will allow you to rescale this image, after which the scale bar is rescaled based on the new DPI input and the scale will have to be set again. This is done to ensure that all of the measurements collected stay consistent with the scale bar reference image.
+
+Continuing the program selects the "Polygon Selection" tool, inverts the image, and prompts you to select the area containing the worm. The image is invert so that the removed area is white later in the analysis instead of black, which may be registered as a line by the ridge detection program. To move forward, simply create a selection around the worm, making sure to exclude any objects in the image aside from the worm, and hit the "OK" button on the popup prompt. This is shown in the image below.
+
+![Selection Demo](https://github.com/zlbaker/ImageJ-Worm-Volume-Measurement/assets/156845020/4e27a702-22f6-410a-8b6b-50ec422af2ea)
+
+A new popup window will then prompt you to enter in a value for the expected width of the line in pixels. This value should be between 1 and 30 pixels, given the limitations of the ridge detection tool, and can be estimated by eye.
+
+Entering a value will then allow the ridge detection software to run. All objects within the image that the software has detected as a line will show the estimated line length in red. The estimated width of the line will be represented by a green line on either side of the red line. *The red line should be in the center of the worm and the green lines should highlight the edges. The red line should also be continuous across the length of the worm.* A popup window will prompt you to input "y" or "n" to assess the quality of the ridge detection. Inputting "y" continues the program while inputting "n" opens a menu of possible adjusts that one can make to improve the results. See the later section titled "Image Modifications to Fix Ridge Detection Issues" for more information and guidance in regard to these results. A picture of what a correct selection might look like is shown below.
+
+![image](https://github.com/zlbaker/ImageJ-Worm-Volume-Measurement/assets/156845020/089410b8-903f-4cbe-a06c-9d489f3c7733)
+
+## Image Modifications to Fix Ridge Detection Issues
+
 
 ## References
 Schneider, C. A., Rasband, W. S., & Eliceiri, K. W. (2012). NIH Image to ImageJ: 25 years of image analysis. *Nature Methods*, 9(7), 671–675.
