@@ -34,7 +34,12 @@ The scale bar image that you selected earlier will now open and you will be prom
 
 The image will then be converted to 8-bit and its resolution will be decreased according to the number that you just entered. Both of these steps are necessary for anaylsis with the ridge detection module, which was designed to analyze much smaller features than our worms. A pop-up window will ask if the scaling is satisfactory, continuing the program if you enter "y" and allowing you the change the DPI adjustment if you enter "n". While it may be difficult to tell if the image is scaled appropriately at this stage, you will be able to adjust this scaling later if the resolution of the worm images is reduced too much or not enough (the worms should ultimated be around 30 pixels wide).
 
-The line tool will then be automatically selected
+The line tool will then be automatically selected and you will be prompted to set the scale using the scale bar image. *Make sure that the "global" box is checked*, then hit the "OK" button on the popup prompt.
+
+![Scale Demo](https://github.com/zlbaker/ImageJ-Worm-Volume-Measurement/assets/156845020/7f5fd87a-5cb2-4a6e-b33b-1d901b78bae4)
+
+### Modifying Worm Images, Gathering 2D Information, and Estimating Volume
+All of the images contained within the input folder will now open. The first one opened will be automatically selected and modified, after which the user will be asked if the resulting modifications look correct. It is at this point that you may notice that the worm is too large for the detection software or that it is much smaller than 30 pixels in width. Inputting "y" will continue the program and inputting "n" will allow you to rescale this image, after which the scale bar is rescaled based on the new DPI input and the scale will have to be set again. This is done to ensure that all of the measurements collected stay consistent with the scale bar reference image.
 
 ## References
 Schneider, C. A., Rasband, W. S., & Eliceiri, K. W. (2012). NIH Image to ImageJ: 25 years of image analysis. *Nature Methods*, 9(7), 671–675.
