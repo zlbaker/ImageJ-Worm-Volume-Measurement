@@ -47,9 +47,18 @@ Continuing the program selects the "Polygon Selection" tool, inverts the image, 
 
 A new popup window will then prompt you to enter in a value for the expected width of the line in pixels. This value should be between 1 and 30 pixels, given the limitations of the ridge detection tool, and can be estimated by eye.
 
-Entering a value will then allow the ridge detection software to run. All objects within the image that the software has detected as a line will show the estimated line length in red. The estimated width of the line will be represented by a green line on either side of the red line. *The red line should be in the center of the worm and the green lines should highlight the edges. The red line should also be continuous across the length of the worm.* A popup window will prompt you to input "y" or "n" to assess the quality of the ridge detection. Inputting "y" continues the program while inputting "n" opens a menu of possible adjusts that one can make to improve the results. See the later section titled "Image Modifications to Fix Ridge Detection Issues" for more information and guidance in regard to these results. A picture of what a correct selection might look like is shown below.
+Entering a value will then allow the ridge detection software to run. All objects within the image that the software has detected as a line will show the estimated line length in red. The estimated width of the line will be represented by a green line on either side of the red line. *The red line should be in the center of the worm and the green lines should highlight the edges. The red line should also be continuous across the length of the worm.* There will be various measurement windows that open, but these can safely be ignored. A popup window will prompt you to input "y" or "n" to assess the quality of the ridge detection. Inputting "y" continues the program while inputting "n" opens a menu of possible adjusts that one can make to improve the results. See the later section titled "Image Modifications to Fix Ridge Detection Issues" for more information and guidance in regard to these results. A picture of what a correct selection might look like is shown below.
 
 ![image](https://github.com/zlbaker/ImageJ-Worm-Volume-Measurement/assets/156845020/089410b8-903f-4cbe-a06c-9d489f3c7733)
+
+Continuing with the program, the length and width measurements collected from ridge detection are used to estimate the volume of the worm. Once again, this calculation assumes that the worm is composed of a number of many small cylinders equal to the number of width measurements collection.
+
+The program will then open another image, modify it, collect measurements, and calculate the volume of the new worms. This process will continue until all images are analyzed.
+
+### Viewing and Saving Measurements
+Once all of the images have been analyzed, all open images will be closed and a results table will be displyed (shown below). You will also be asked to input a name for the CSV file, which after entering will be used to save the CSV file in the output folder specified at the beginning of the program. The results can be analyzed with any statistical software that accepts CSV files.
+
+![image](https://github.com/zlbaker/ImageJ-Worm-Volume-Measurement/assets/156845020/b0914fef-d29a-40ac-a075-b00219652bef)
 
 ## Image Modifications to Fix Ridge Detection Issues
 
