@@ -61,6 +61,8 @@ Once all of the images have been analyzed, all open images will be closed and a 
 ![image](https://github.com/zlbaker/ImageJ-Worm-Volume-Measurement/assets/156845020/b0914fef-d29a-40ac-a075-b00219652bef)
 
 ## Image Modifications to Fix Ridge Detection Issues
+### A General Fix for Many Problems
+After executing the ridge detection function on one of your images, you may notice a number of different problems. The most common of these issues are detailed below with specific information on how to address each one. The most common issues, however, being that too much of the background is included in the highlighted area or that not enough of the worm is, can often be fixed by adjusting the brightness and contrast of the image.
 
 
 ## References
