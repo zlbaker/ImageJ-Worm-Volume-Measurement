@@ -4,6 +4,8 @@ This macro script was originally designed to estimate the full volume of a *Lumb
 
 This macro was produced as a Kenyon College COMP401 undergraduate project in the Spring of 2024.
 
+The following explanation assumes a basic understanding of ImageJ. While there are countless sources out there to help you learn about this, I found the following link from the Harvard Neurobiology Imaging website to be useful: https://nif.hms.harvard.edu/sites/nif.hms.harvard.edu/files/education-files/Fiji%20for%20Beginners.pdf
+
 Any questions can be directed to zachlenbaker@gmail.com
 
 ## Macro Warnings
@@ -27,7 +29,12 @@ After selecting this folder, you will be prompted to select a folder to store th
 
 You will then be prompted to select the image that contains the appropriate scale bar, after selecting "OK" on a popup prompt. It is incredibly important that this image is take at the same magnification as the worm images that will be analyzed.
 
-###
+### Setting Scale
+The scale bar image that you selected earlier will now open and you will be prompted to enter a DPI (dot per inch, refers to the resolution of the image) value to reduce the resolution of the image to. The following function assumes that the original image is 600 DPI, so the entered value should be between 1 and 600. The default value is set to 100, which will likely need to be adjusted according to the resolution of your images.
+
+The image will then be converted to 8-bit and its resolution will be decreased according to the number that you just entered. Both of these steps are necessary for anaylsis with the ridge detection module, which was designed to analyze much smaller features than our worms. A pop-up window will ask if the scaling is satisfactory, continuing the program if you enter "y" and allowing you the change the DPI adjustment if you enter "n". While it may be difficult to tell if the image is scaled appropriately at this stage, you will be able to adjust this scaling later if the resolution of the worm images is reduced too much or not enough (the worms should ultimated be around 30 pixels wide).
+
+The line tool will then be automatically selected
 
 ## References
 Schneider, C. A., Rasband, W. S., & Eliceiri, K. W. (2012). NIH Image to ImageJ: 25 years of image analysis. *Nature Methods*, 9(7), 671–675.
